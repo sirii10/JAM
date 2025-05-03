@@ -131,6 +131,8 @@ class _RegisterWidgetState extends State<RegisterWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

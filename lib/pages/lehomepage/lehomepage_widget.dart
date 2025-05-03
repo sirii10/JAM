@@ -27,6 +27,8 @@ class _LehomepageWidgetState extends State<LehomepageWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LehomepageModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

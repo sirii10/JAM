@@ -37,6 +37,8 @@ class _Jamdocument2ndpageWidgetState extends State<Jamdocument2ndpageWidget> {
 
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

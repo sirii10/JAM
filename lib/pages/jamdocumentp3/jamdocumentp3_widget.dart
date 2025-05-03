@@ -38,6 +38,8 @@ class _Jamdocumentp3WidgetState extends State<Jamdocumentp3Widget> {
 
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
