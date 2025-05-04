@@ -1,6 +1,8 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
@@ -47,7 +49,6 @@ class _LehomepageWidgetState extends State<LehomepageWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
@@ -67,8 +68,11 @@ class _LehomepageWidgetState extends State<LehomepageWidget> {
                     fontStyle:
                         FlutterFlowTheme.of(context).headlineMedium.fontStyle,
                   ),
-              colors: [],
-              gradientDirection: GradientDirection.rtl,
+              colors: [
+                FlutterFlowTheme.of(context).secondaryBackground,
+                FlutterFlowTheme.of(context).tertiary
+              ],
+              gradientDirection: GradientDirection.btt,
               gradientType: GradientType.linear,
             ),
           ),
@@ -78,8 +82,12 @@ class _LehomepageWidgetState extends State<LehomepageWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
+
+                    context.goNamedAuth(LoginWidget.routeName, context.mounted);
                   },
                   text: 'Log Out',
                   options: FFButtonOptions(
@@ -204,8 +212,9 @@ class _LehomepageWidgetState extends State<LehomepageWidget> {
                                       ),
                                 ),
                                 FFButtonWidget(
-                                  onPressed: () {
-                                    print('Button pressed ...');
+                                  onPressed: () async {
+                                    context
+                                        .pushNamed(JamdocumentWidget.routeName);
                                   },
                                   text: 'Log a Jam Session',
                                   options: FFButtonOptions(
@@ -570,8 +579,9 @@ class _LehomepageWidgetState extends State<LehomepageWidget> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
+                                    onPressed: () async {
+                                      await launchURL(
+                                          'https://www.etsu.edu/cas/das/bluegrass/');
                                     },
                                     text: 'Visit ETSU Bluegrass Program',
                                     options: FFButtonOptions(

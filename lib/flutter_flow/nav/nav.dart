@@ -112,6 +112,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: LehomepageWidget.routeName,
           path: LehomepageWidget.routePath,
+          requireAuth: true,
           builder: (context, params) => LehomepageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

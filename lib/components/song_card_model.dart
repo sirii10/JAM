@@ -1,13 +1,10 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'jamdocumentp3_widget.dart' show Jamdocumentp3Widget;
+import '/flutter_flow/form_field_controller.dart';
+import 'song_card_widget.dart' show SongCardWidget;
 import 'package:flutter/material.dart';
 
-class Jamdocumentp3Model extends FlutterFlowModel<Jamdocumentp3Widget> {
-  ///  State fields for stateful widgets in this page.
-
-  bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+class SongCardModel extends FlutterFlowModel<SongCardWidget> {
+  ///  State fields for stateful widgets in this component.
 
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode1;
@@ -17,14 +14,16 @@ class Jamdocumentp3Model extends FlutterFlowModel<Jamdocumentp3Widget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
+  // State field(s) for DropDown widget.
+  String? dropDownValue1;
+  FormFieldController<String>? dropDownValueController1;
+  // State field(s) for DropDown widget.
+  String? dropDownValue2;
+  FormFieldController<String>? dropDownValueController2;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
-  // State field(s) for TextField widget.
-  FocusNode? textFieldFocusNode4;
-  TextEditingController? textController4;
-  String? Function(BuildContext, String?)? textController4Validator;
 
   @override
   void initState(BuildContext context) {}
@@ -39,8 +38,5 @@ class Jamdocumentp3Model extends FlutterFlowModel<Jamdocumentp3Widget> {
 
     textFieldFocusNode3?.dispose();
     textController3?.dispose();
-
-    textFieldFocusNode4?.dispose();
-    textController4?.dispose();
   }
 }
